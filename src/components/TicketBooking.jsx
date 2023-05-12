@@ -1,24 +1,22 @@
 
 import React, { useState } from "react";
-//import { useHistory } from "react-router"
 
 
 function TicketBooking(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  //const history = useHistory(); // Get the history object from React Router
 
 
   function handleSubmit(event) {
     event.preventDefault();
-  
+
     // Validate form fields
     if (!name || !email || !phone) {
       alert("Please fill in all fields");
       return;
     }
-  
+
     // Create booking object
     const booking = {
       name,
@@ -30,7 +28,7 @@ function TicketBooking(props) {
       theater: props.theater,
       seats: props.selectedSeats,
     };
-  
+
     // Submit booking to server (example using fetch)
     fetch("http://localhost:8000/api/bookings", {
       method: "POST",
@@ -47,14 +45,13 @@ function TicketBooking(props) {
         setName("");
         setEmail("");
         setPhone("");
-        //history.push("/ShowDetails"); // Navigate to the home page
       })
       .catch((error) => {
         console.error("Error submitting booking:", error);
         // TODO: Handle booking submission error
       });
   }
-  
+
 
   return (
     <div className="book">
@@ -74,7 +71,7 @@ function TicketBooking(props) {
         </label>
         <button type="submit">Finish Booking</button>
         <a href="/" className="cancel-link round-button">Cancel Booking</a>
-       
+
       </form>
     </div>
   );

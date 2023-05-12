@@ -88,20 +88,3 @@ app.listen(8000, () => {
 // dotenv.config();
 
 
-// const connect = async() =>{
-//   try{
-//     await mongoose.connect(process.env.MONGO_URL);
-//     console.log("connected to mongodb");
-//     } catch(error){
-//     throw error;
-//   }
-// };
-
-// app.get("/",(req,res)=>{
-
-// })
-
-// app.listen(8000, ()=>{
-//     connect();
-//     console.log("Connected to backend");
-// }) 
